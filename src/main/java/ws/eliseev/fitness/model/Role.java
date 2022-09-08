@@ -21,24 +21,24 @@ import java.util.Set;
 @NoArgsConstructor
 public class Role implements GrantedAuthority {
 
-    /* Первичный ключ с генерацией значения по возрастанию, 8 байт */
+    /** Первичный ключ с генерацией значения по возрастанию, 8 байт */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
 
-    /* Наименование роли с префиксом "ROLE_", не более 255 символов */
+    /** Наименование роли с префиксом "ROLE_", не более 255 символов */
     @Column(name = "NAME")
     private String name;
 
-    /* Конструктор для удобного заполнения тестовыми данными */
+    /** Конструктор для удобного заполнения тестовыми данными */
     @Builder
     private Role(Long id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    /* Коллекция пользователей обладающих данной ролью для реализации связи "многие ко многим" */
+    /** Коллекция пользователей обладающих данной ролью для реализации связи "многие ко многим" */
     @JsonIgnore
     @Audited
     @ManyToMany(mappedBy = "roles", fetch = FetchType.LAZY)

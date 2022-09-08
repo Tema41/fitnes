@@ -18,7 +18,7 @@ public interface IUserMapper {
      * @param entity сущность User
      * @return объект типа DTO
      */
-    UserDto maoToDto(User entity);
+    UserDto mapToDto(User entity);
 
     /**
      * метод преобразования объекта в entity

@@ -79,8 +79,8 @@ public class UserController {
             @ApiResponse(responseCode = "200", description = "Пользователь найден"),
             @ApiResponse(responseCode = "404", description = "Пользователь не найден")})
     public ResponseEntity<Optional<UserDto>> getUserByUseName(@PathVariable(value = "username") String username) {
-        Optional<Optional<UserDto>> userName = Optional.of(service.getByUserName(username));
-        return ResponseEntity.of(userName);
+        Optional<UserDto> userName = service.getByUserName(username);
+        return ResponseEntity.ok(userName);
     }
 
     @GetMapping("/email/{email}")
@@ -89,8 +89,8 @@ public class UserController {
             @ApiResponse(responseCode = "200", description = "Пользователь найден"),
             @ApiResponse(responseCode = "404", description = "Пользователь не найден")})
     public ResponseEntity<Optional<UserDto>> getUserByEmail(@PathVariable(value = "email") String email) {
-        Optional<Optional<UserDto>> userEmail = Optional.of(service.getUserByEmail(email));
-        return ResponseEntity.of(userEmail);
+        Optional<UserDto> userEmail = service.getUserByEmail(email);
+        return ResponseEntity.ok(userEmail);
     }
 
     @GetMapping("/phone/{phone}")
@@ -99,8 +99,8 @@ public class UserController {
             @ApiResponse(responseCode = "200", description = "Пользователь найден"),
             @ApiResponse(responseCode = "404", description = "Пользователь не найден")})
     public ResponseEntity<Optional<UserDto>> getUserByPhone(@PathVariable(value = "phone") String phone) {
-        Optional<Optional<UserDto>> userPhone = Optional.of(service.getUserByPhone(phone));
-        return ResponseEntity.of(userPhone);
+        Optional<UserDto> userPhone = service.getUserByPhone(phone);
+        return ResponseEntity.ok(userPhone);
     }
 
     @DeleteMapping("/{id}")
