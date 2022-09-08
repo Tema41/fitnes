@@ -2,11 +2,6 @@ package ws.eliseev.fitness.dto;
 
 import lombok.*;
 
-/**
- * DTO объект от сущности User
- * @see ws.eliseev.fitness.model.User
- * @author Зыков Артем
- */
 @EqualsAndHashCode(exclude = "id")
 @NoArgsConstructor
 @AllArgsConstructor

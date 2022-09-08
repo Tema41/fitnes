@@ -2,11 +2,6 @@ package ws.eliseev.fitness.dto;
 
 import lombok.*;
 
-/**
- * DTO объект от сущности Workout
- * @see ws.eliseev.fitness.model.Workout
- * @author Корнеев Аркадий
- */
 @EqualsAndHashCode(exclude = "id")
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,21 +9,33 @@ import lombok.*;
 @Setter
 public class WorkoutDto {
 
-    /** Поле id */
+    /**
+     * Поле id
+     */
     private Long id;
 
-    /** Поле название упражнения */
+    /**
+     * Поле название упражнения
+     */
     private String name;
 
-    /** Поле указания группы мышц */
+    /**
+     * Поле указания группы мышц
+     */
     private String exercise;
 
-    /** Поле количество подходов */
+    /**
+     * Поле количество подходов
+     */
     private int move;
 
-    /** Поле количество повторений */
+    /**
+     * Поле количество повторений
+     */
     private int repeat;
 
-    /** Поле месторасположение для занятий */
+    /**
+     * Поле месторасположение для занятий
+     */
     private String area;
 }
